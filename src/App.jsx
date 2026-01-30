@@ -160,7 +160,7 @@ function App() {
 
   return (
     <>
-      <Leva hidden />
+      <Leva />
       {/* {!showRecorrido360 ? ( */}
       {!transitionHomepage ? (
         <>
@@ -177,49 +177,49 @@ function App() {
             isAnimating={currentScreen !== targetScreen}
           /> */}
           <UI />
+          <div className="fixed inset-0 w-screen h-screen overflow-hidden">
+            <Canvas
+              dpr={[1, 2]}
+              gl={{
+                antialias: true,
+                toneMapping: THREE.ACESFilmicToneMapping,
+                outputColorSpace: THREE.SRGBColorSpace,
+              }}
+              camera={{
+                fov: 45,
+                near: 1,
+                far: 1200,
+                // position: [75, 75, 150],
+                position: [
+                  94.88715402309754, 111.6694578807425, 202.37511175736282,
+                ],
+                target: [
+                  2.9744458895296013, -21.885757328439343, 12.500057387505853,
+                ],
+              }}
+              shadows={{
+                enabled: true,
+                type: "VSMShadowMap",
+              }}
 
-          <Canvas
-            dpr={[1, 2]}
-            gl={{
-              antialias: true,
-              toneMapping: THREE.ACESFilmicToneMapping,
-              outputColorSpace: THREE.SRGBColorSpace,
-            }}
-            camera={{
-              fov: 45,
-              near: 1,
-              far: 800,
-              // position: [75, 75, 150],
-              position: [
-                89.17588943074588, 112.38822054752744, 205.34645416607356,
-              ],
-              target: [
-                2.9744458895296013, -21.885757328439343, 12.500057387505853,
-              ],
-            }}
-            shadows={{
-              enabled: true,
-              type: "VSMShadowMap",
-            }}
+              // camera={{ position: [5, 5, 10], fov: 30, near: 1 }}
+              // gl={{
+              //   preserveDrawingBuffer: true,
+              // }}
+              // shadows
+            >
+              {/* <color attach="background" args={[backgroundColor]} /> */}
+              {/* <fog attach="fog" args={[backgroundColor, 5, 12]} /> */}
 
-            // camera={{ position: [5, 5, 10], fov: 30, near: 1 }}
-            // gl={{
-            //   preserveDrawingBuffer: true,
-            // }}
-            // shadows
-          >
-            {/* <color attach="background" args={[backgroundColor]} /> */}
-            {/* <fog attach="fog" args={[backgroundColor, 5, 12]} /> */}
+              <ScreenTransition transition={transition} color="#2E3641" />
 
-            <ScreenTransition transition={transition} color="#2E3641" />
-
-            {/* <OrbitControls /> */}
-            {/* <CameraControls ref={controls} />
+              {/* <OrbitControls /> */}
+              {/* <CameraControls ref={controls} />
             <SoftShadows /> */}
 
-            {/* <SheetProvider sheet={mainSheet}> */}
-            {/* <e.fog theatreKey="Fog" attach="fog" args={["#cc7b32", 3, 5]} /> */}
-            {/* <PerspectiveCamera
+              {/* <SheetProvider sheet={mainSheet}> */}
+              {/* <e.fog theatreKey="Fog" attach="fog" args={["#cc7b32", 3, 5]} /> */}
+              {/* <PerspectiveCamera
               position={[5, 5, 10]}
               fov={30}
               near={1}
@@ -227,7 +227,7 @@ function App() {
               theatreKey="Camera"
               lookAt={cameraTargetRef}
             /> */}
-            {/* <e.mesh
+              {/* <e.mesh
                 theatreKey="Camera Target"
                 visible="editor"
                 ref={cameraTargetRef}
@@ -236,24 +236,24 @@ function App() {
                 <meshPhongMaterial color="yellow" />
               </e.mesh> */}
 
-            <Suspense>
-              <Experience />
-            </Suspense>
+              <Suspense>
+                <Experience />
+              </Suspense>
 
-            {/* </SheetProvider> */}
-          </Canvas>
+              {/* </SheetProvider> */}
+            </Canvas>
 
-          <Overlay />
+            <Overlay />
 
-          {/* <Interface360 onReturnClick={handleReturnClick} /> */}
+            {/* <Interface360 onReturnClick={handleReturnClick} /> */}
 
-          {/* {!isLoading && (
+            {/* {!isLoading && (
             <>
               <Interface360 onReturnClick={handleReturnClick} />
             </>
           )} */}
 
-          {/* <Canvas camera={{ position: [0, 1.8, 5], fov: 42 }}>
+            {/* <Canvas camera={{ position: [0, 1.8, 5], fov: 42 }}>
           <color attach="background" args={[backgroundColor]} />
           <fog attach="fog" args={[backgroundColor, 5, 12]} />
           <ScreenTransition transition={transition} color="#a5b4fc" />
@@ -261,6 +261,7 @@ function App() {
             <Experience />
           </Suspense>
         </Canvas> */}
+          </div>
         </>
       )}
     </>

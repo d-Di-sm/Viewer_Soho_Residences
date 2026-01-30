@@ -13,11 +13,11 @@ export const isMobileAtom = atom(false);
 export const annotation3d = atom("base");
 
 export const residenceTogglesAtom = atom({
-  "Two Bedroom Garden": false,
-  "Two Bedroom": false,
-  "Three Bedroom Garden": false,
-  "Three Bedroom": false,
-  "Four Bedroom": false,
+  "2 Bedroom Garden": false,
+  "2 Bedroom": false,
+  "3 Bedroom Garden": false,
+  "3 Bedroom": false,
+  "4 Bedroom": false,
 });
 
 export const TRANSITION_DELAY = 0.8;
@@ -354,10 +354,18 @@ export const UI = () => {
       {/* HOME */}
       <motion.section
         animate={!transition && screen === "home" ? "visible" : "hidden"}
-        className={`z-10 fixed bottom-0 left-0 right-0 w-full md:bottom-auto 
-        md:top-1/2 md:-translate-y-1/2 md:left-1/2 md:w-auto md:-translate-x-1/2
+        className={
+          //   `z-10 fixed bottom-0 left-0 right-0 w-full md:bottom-auto
+          // md:top-1/2 md:-translate-y-1/2 md:left-1/2 md:w-auto md:-translate-x-1/2
+
+          `z-10 fixed
+    bottom-0 left-0 right-0 w-full
+    md:bottom-20 md:right-20 md:left-auto md:top-auto md:w-auto
+    md:translate-x-0 md:translate-y-0
+
         ${isMobile ? "text-center px-4 pb-8" : "text-left p-4"}
-        ${screen === "home" ? "pointer-events-auto" : "pointer-events-none"}`}
+        ${screen === "home" ? "pointer-events-auto" : "pointer-events-none"}`
+        }
       >
         <motion.h2
           variants={{
@@ -425,7 +433,7 @@ export const UI = () => {
             onClick={() => transitionToHomepage()}
             className={`text-sm bg-transparent hover:bg-[#C6C1AE] font-semibold
            text-[#FFFEF7] hover:text-[#2E3641] border-2
-            border-[#FFFEF7]  transition-colors duration-500 px-4 py-2 mt-2 rounded-lg uppercase w-2/3 md:w-auto ${
+            border-[#FFFEF7]  transition-colors duration-500 px-4 py-1 mt-2 rounded-lg uppercase w-2/3 md:w-auto ${
               isMobile ? "origin-top scale-y-[0.75]" : ""
             }`}
             variants={{
@@ -460,7 +468,7 @@ export const UI = () => {
             }}
             className={`text-sm bg-transparent hover:bg-[#C6C1AE] font-semibold
            text-[#FFFEF7] hover:text-[#2E3641] border-2
-            border-[#FFFEF7]  transition-colors duration-500 px-4 py-2 mt-2 rounded-lg uppercase w-2/3 md:w-auto ${
+            border-[#FFFEF7]  transition-colors duration-500 px-4 py-1 mt-2 rounded-lg uppercase w-2/3 md:w-auto ${
               isMobile ? "origin-top scale-y-[0.75]" : ""
             }`}
             variants={{
@@ -528,7 +536,7 @@ export const UI = () => {
               y: 50,
             }}
             // onClick={() => transitionToScreen("home")}
-            className={`font-medium border-2 transition-colors duration-500 px-4 py-2 mt-2 rounded-lg w-1/2 md:w-auto ${
+            className={`text-sm font-medium border-2 transition-colors duration-500 px-4 py-1 mt-2 rounded-lg w-1/2 md:w-auto ${
               activeButton === "residences"
                 ? "bg-[#C6C1AE] text-[#2E3641] border-[#FFFEF7] hover:text-[#2E3641]"
                 : "bg-transparent hover:bg-[#C6C1AE] text-[#FFFEF7] hover:text-[#2E3641] border-[#FFFEF7]"
@@ -564,7 +572,7 @@ export const UI = () => {
               y: 50,
             }}
             // onClick={() => transitionToScreen("home")}
-            className={`font-medium border-2 transition-colors duration-500 px-4 py-2 mt-2 rounded-lg w-1/2 md:w-auto ${
+            className={`text-sm font-medium border-2 transition-colors duration-500 px-4 py-1 mt-2 rounded-lg w-1/2 md:w-auto ${
               activeButton === "amenities"
                 ? "bg-[#C6C1AE] text-[#2E3641] border-[#FFFEF7] hover:text-[#2E3641]"
                 : "bg-transparent hover:bg-[#C6C1AE] text-[#FFFEF7] hover:text-[#2E3641] border-[#FFFEF7]"
@@ -600,7 +608,7 @@ export const UI = () => {
               y: 50,
             }}
             // onClick={() => transitionToScreen("home")}
-            className={`font-medium border-2 transition-colors duration-500 px-4 py-2 mt-2 rounded-lg w-1/2 md:w-auto ${
+            className={`text-sm font-medium border-2 transition-colors duration-500 px-4 py-1 mt-2 rounded-lg w-1/2 md:w-auto ${
               activeButton === "entrance"
                 ? "bg-[#C6C1AE] text-[#2E3641] border-[#FFFEF7] hover:text-[#2E3641]"
                 : "bg-transparent hover:bg-[#C6C1AE] text-[#FFFEF7] hover:text-[#2E3641] border-[#FFFEF7]"
@@ -639,7 +647,7 @@ export const UI = () => {
               transitionToScreen("home");
               setSectionCam(0);
             }}
-            className={`bg-transparent hover:bg-[#C6C1AE] font-medium text-[#FFFEF7] hover:text-[#2E3641] border-2 border-[#FFFEF7]  transition-colors duration-500 px-4 py-2 mt-2 rounded-lg w-1/2 md:w-auto ${
+            className={`bg-transparent hover:bg-[#C6C1AE] text-sm font-medium text-[#FFFEF7] hover:text-[#2E3641] border-2 border-[#FFFEF7]  transition-colors duration-500 px-4 py-1 mt-2 rounded-lg w-1/2 md:w-auto ${
               isMobile ? "origin-top scale-y-[0.25]" : ""
             }`}
           >
@@ -657,9 +665,9 @@ export const UI = () => {
           transition={{ type: "spring", stiffness: 260, damping: 24 }}
           // className="fixed left-4 top-1/2 -translate-y-1/2 z-20 w-52 scale-[1.5] origin-center bg-transparent border border-white/30 rounded-xl p-4 flex flex-col gap-3 pointer-events-auto"
 
-          className="fixed left-4 top-1/2 z-20 w-80 origin-center bg-transparent border-2 border-[#FFFEF7] rounded-xl p-4 flex flex-col gap-3 pointer-events-auto"
+          className="fixed left-4 top-1/2 z-20 w-60 origin-center bg-transparent border-2 border-[#FFFEF7] rounded-xl p-2 py-1 flex flex-col gap-2 pointer-events-auto"
         >
-          <div className="flex items-center justify-between">
+          <div className="flex py-1 items-center justify-between">
             <p className="text-lg font-semibold">Residences</p>
             <button
               className="text-sm text-[#FFFEF7]/70 hover:text-[#2E3641] transition-colors"
@@ -677,7 +685,7 @@ export const UI = () => {
               key={label}
               aria-pressed={active}
               onClick={() => handleResidenceToggle(label)}
-              className={`flex items-center justify-between rounded-lg px-3 py-2 text-sm font-semibold border transition-colors ${
+              className={`flex items-center justify-between rounded-lg px-3 py-0 text-sm font-semibold border transition-colors ${
                 active
                   ? "bg-[#C6C1AE] text-[#2E3641] border-[#FFFEF7] hover:bg-[#C6C1AE] hover:text-[#2E3641]"
                   : "bg-white/10 text-[#FFFEF7] border-[#FFFEF7]/50 hover:bg-[#C6C1AE] hover:text-[#2E3641]"
@@ -685,16 +693,16 @@ export const UI = () => {
             >
               <span>{label}</span>
               <span
-                className={`relative h-6 w-10 rounded-full transition-colors ${
+                className={`relative h-4 w-6 rounded-full transition-colors ${
                   active ? "bg-black" : "bg-white/30"
                 }`}
               >
                 <span
-                  className={`absolute top-0.5 left-0.5 h-5 w-5 rounded-full transition-colors ${
+                  className={`absolute top-0.5 left-0.5 h-3 w-3 rounded-full transition-colors ${
                     active ? "bg-white" : "bg-white"
                   }
                   
-                    transition-transform ${active ? "translate-x-4" : ""}`}
+                    transition-transform ${active ? "translate-x-2" : ""}`}
                 />
               </span>
             </button>

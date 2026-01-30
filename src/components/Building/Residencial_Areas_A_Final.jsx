@@ -192,7 +192,7 @@ const ResidencialAreasA = (props) => {
           "2BR_G_A",
           "#2E3641",
         )}
-        visible={tipoCheck("2BR_G_A", "Two Bedroom Garden")}
+        visible={tipoCheck("2BR_G_A", "2 Bedroom Garden")}
         scale={hoveredMesh === "2BR_G_A" ? 1.003 : 1}
         // onPointerOver={() => handlePointerOver('2BR_G_A')}
         // onPointerOut={handlePointerOut}
@@ -218,7 +218,7 @@ const ResidencialAreasA = (props) => {
           "2BR_N1_A",
           "#2E3641",
         )}
-        visible={tipoCheck("2BR_N1_A", "Two Bedroom")}
+        visible={tipoCheck("2BR_N1_A", "2 Bedroom")}
         scale={hoveredMesh === "2BR_N1_A" ? 1.003 : 1}
         // onPointerOver={() => handlePointerOver('2BR_N1_A')}
         // onPointerOut={handlePointerOut}
@@ -244,7 +244,7 @@ const ResidencialAreasA = (props) => {
           "2BR_N2_A",
           "#2E3641",
         )}
-        visible={tipoCheck("2BR_N2_A", "Two Bedroom")}
+        visible={tipoCheck("2BR_N2_A", "2 Bedroom")}
         scale={hoveredMesh === "2BR_N2_A" ? 1.003 : 1}
         // onPointerOver={() => handlePointerOver('2BR_N2_A')}
         // onPointerOut={handlePointerOut}
@@ -270,7 +270,7 @@ const ResidencialAreasA = (props) => {
           "3BR_G_A",
           "#2E3641",
         )}
-        visible={tipoCheck("3BR_G_A", "Three Bedroom Garden")}
+        visible={tipoCheck("3BR_G_A", "3 Bedroom Garden")}
         scale={hoveredMesh === "3BR_G_A" ? 1.003 : 1}
         // onPointerOver={() => handlePointerOver('3BR_G_A')}
         // onPointerOut={handlePointerOut}
@@ -296,7 +296,7 @@ const ResidencialAreasA = (props) => {
           "3BR_N1_A",
           "#2E3641",
         )}
-        visible={tipoCheck("3BR_N1_A", "Three Bedroom")}
+        visible={tipoCheck("3BR_N1_A", "3 Bedroom")}
         scale={hoveredMesh === "3BR_N1_A" ? 1.003 : 1}
         // onPointerOver={() => handlePointerOver('3BR_N1_A')}
         // onPointerOut={handlePointerOut}
@@ -322,7 +322,7 @@ const ResidencialAreasA = (props) => {
           "3BR_N2_A",
           "#2E3641",
         )}
-        visible={tipoCheck("3BR_N2_A", "Three Bedroom")}
+        visible={tipoCheck("3BR_N2_A", "3 Bedroom")}
         scale={hoveredMesh === "3BR_N2_A" ? 1.003 : 1}
         // onPointerOver={() => handlePointerOver('3BR_N2_A')}
         // onPointerOut={handlePointerOut}
@@ -345,7 +345,7 @@ const ResidencialAreasA = (props) => {
         geometry={nodes.R_4BR_F.geometry}
         // material={getMaterial(materials['Material_2.012'], '4BR_A', '#E8E2DB')}
         material={getMaterial(materials["Material_2.012"], "4BR_A", "#2E3641")}
-        visible={tipoCheck("4BR_A", "Four Bedroom")}
+        visible={tipoCheck("4BR_A", "4 Bedroom")}
         scale={hoveredMesh === "4BR_A" ? 1.003 : 1}
         // onPointerOver={() => handlePointerOver('4BR_A')}
         // onPointerOut={handlePointerOut}
