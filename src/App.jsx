@@ -160,7 +160,7 @@ function App() {
 
   return (
     <>
-      <Leva />
+      <Leva hidden />
       {/* {!showRecorrido360 ? ( */}
       {!transitionHomepage ? (
         <>
